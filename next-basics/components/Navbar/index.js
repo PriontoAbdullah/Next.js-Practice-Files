@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import React from 'react';
+import styles from './NavBar.module.css';
 
 const NavBar = () => {
   return (
     <>
-      <ul>
+      <ul className={styles.navLink}>
         <li>
           <Link href="/">
-            <a> Home </a>
+            <a>Home </a>
           </Link>
         </li>
         <li>
@@ -26,8 +26,28 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/blog/71">
+          <Link href="/blog/71" replace>
             <a>Blog Post 71 </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/product">
+            <a>Product </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/product/45/review/3">
+            <a>Review 3 of Product 45 </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/docs/feature1/concept5/example10">
+            <a>Docs Features 3 of Concept 5 of Example 10</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/users">
+            <a>Users List</a>
           </Link>
         </li>
       </ul>
