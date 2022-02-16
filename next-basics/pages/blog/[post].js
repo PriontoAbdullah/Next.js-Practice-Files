@@ -1,28 +1,18 @@
 import { useRouter } from 'next/router';
 import NavBar from '../../components/Navbar';
 
-export const getStaticPaths = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await res.json();
-
-  const paths = data?.map((post) => {
-    return {
-      params: {
-        post: post.id.toString(),
-      },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
 export const getStaticProps = async (context) => {
-  const id = context.params.post;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const { post } = context.params;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${post}`);
   const data = await res.json();
+
+  if (!data.id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  console.log(`Generating page for post ${post}`);
 
   return {
     props: {
@@ -31,9 +21,52 @@ export const getStaticProps = async (context) => {
   };
 };
 
+export const getStaticPaths = async () => {
+  // const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  // const data = await res.json();
+
+  // const paths = data.map((post) => ({
+  //   params: {
+  //     post: `${post.id}`,
+  //   },
+  // }));
+
+  return {
+    // paths,
+    // fallback: false,
+
+    paths: [
+      {
+        params: {
+          post: '1',
+        },
+      },
+      {
+        params: {
+          post: '2',
+        },
+      },
+      {
+        params: {
+          post: '3',
+        },
+      },
+    ],
+    fallback: true,
+  };
+};
+
 const Post = ({ data }) => {
   const router = useRouter();
-  const { post } = router.query;
+
+  if (router.isFallback) {
+    return (
+      <div>
+        <NavBar />
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <>

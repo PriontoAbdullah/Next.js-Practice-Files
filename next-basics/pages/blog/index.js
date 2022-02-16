@@ -9,6 +9,8 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
+    // Incremental Static Regeneration (ISR)
+    revalidate: 10,
   };
 };
 

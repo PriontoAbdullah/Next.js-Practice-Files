@@ -1,14 +1,16 @@
 .navLink {
   list-style: none;
-  margin: 5px;
+  margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .navLink li {
-  padding: 0 0 0 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .navLink li a {
@@ -21,4 +23,11 @@
 .navLink li a:hover {
   color: #e26009;
   text-decoration: underline;
+}
+
+.navLink p {
+  color: #707070;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  margin: 0.6rem 0 0.1rem 0;
 }
