@@ -19,11 +19,19 @@
       "description": "Description 3"
     }
   ],
+
+  "dashboard": {
+    "posts": 15,
+    "likes": 150,
+    "followers": 25,
+    "following": 75
+  },
+
   "news": [
     {
       "id": 1,
       "title": "News Article 1",
-      "description": "Description 1",
+      "description": "New Description 1",
       "category": "sports"
     },
     {
@@ -35,16 +43,11 @@
     {
       "id": 3,
       "title": "News Article 3",
-      "description": "Description 3",
+      "description": "Old Description 3",
       "category": "sports"
     }
   ],
-  "dashboard": {
-    "posts": 5,
-    "likes": 100,
-    "followers": 20,
-    "following": 50
-  },
+
   "events": [
     {
       "id": 1,

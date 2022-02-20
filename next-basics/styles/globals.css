@@ -1,5 +1,6 @@
 html,
 body {
+  background: #1b1b1b;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -17,4 +18,32 @@ a {
 
 .hello {
   color: #0070f3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  color: #e6e6e6;
+}
+
+li {
+  list-style: none;
+}
+
+a > h2 {
+  color: #ff1de1;
+}
+
+button {
+  background: none;
+  border: 1px solid #cfcece;
+  padding: 5px;
+  font-size: inherit;
+  cursor: pointer;
+  color: #61e98e;
 }

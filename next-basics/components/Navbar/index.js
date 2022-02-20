@@ -72,6 +72,20 @@ const NavBar = () => {
             <a>News Category</a>
           </Link>
         </li>
+
+        <p>Client Side data fetching - CSR</p>
+        <li>
+          <Link href="/dashboard">
+            <a>Dashboard</a>
+          </Link>
+        </li>
+
+        <p>Pre rendering + Client side Data Fetching - SSR + CSR</p>
+        <li>
+          <Link href="/events">
+            <a>Events</a>
+          </Link>
+        </li>
       </ul>
     </>
   );

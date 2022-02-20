@@ -2,6 +2,8 @@ import Link from 'next/link';
 import NavBar from '../../components/Navbar';
 
 export const getStaticProps = async () => {
+  console.log('Regenerating page for post');
+
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data = await res.json();
 
