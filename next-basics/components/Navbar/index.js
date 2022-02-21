@@ -86,6 +86,13 @@ const NavBar = () => {
             <a>Events</a>
           </Link>
         </li>
+
+        <p>API GET POST DELETE Request</p>
+        <li>
+          <Link href="/comments">
+            <a>Comments</a>
+          </Link>
+        </li>
       </ul>
     </>
   );

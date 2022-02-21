@@ -26,7 +26,9 @@ export default function Blog({ data }) {
           <div key={post.id}>
             <ul>
               <li>
-                <Link href={`/blog/${post.id}`}>{post.title}</Link>
+                <Link href={`/blog/${post.id}`}>
+                  <p>{post.title}</p>
+                </Link>
               </li>
             </ul>
           </div>
