@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import NavBar from '../../components/Navbar';
 
 export const getStaticProps = async (context) => {
   const { post } = context.params;
@@ -62,7 +61,6 @@ const Post = ({ data }) => {
   if (router.isFallback) {
     return (
       <div>
-        <NavBar />
         <h1>Loading...</h1>
       </div>
     );
@@ -70,8 +68,6 @@ const Post = ({ data }) => {
 
   return (
     <>
-      <NavBar />
-
       <div>
         <h1 className="hello">Blog post: {data.id}</h1>
         <h3> {data.title} </h3>

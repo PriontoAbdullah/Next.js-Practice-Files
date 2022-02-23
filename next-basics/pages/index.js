@@ -12,6 +12,7 @@ export default function Home() {
 
       <NavBar />
       <h1 className={styles.hello}>Hello World</h1>
+      {/* CSS in JS */}
       <h2 style={{ color: 'green' }}>Welcome</h2>
       <h3>Good job</h3>
 

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import NavBar from '../../components/Navbar';
 
 export const getStaticProps = async () => {
   console.log('Regenerating page for post');
@@ -19,7 +18,6 @@ export const getStaticProps = async () => {
 export default function Blog({ data }) {
   return (
     <>
-      <NavBar />
       <h1 className="hello">Blog Page</h1>
       {data?.slice(0, 10)?.map((post) => {
         return (

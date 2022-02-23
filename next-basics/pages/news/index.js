@@ -1,5 +1,3 @@
-import Navbar from '../../components/navbar';
-
 export const getServerSideProps = async () => {
   const res = await fetch('http://localhost:4000/news');
   const data = await res.json();
@@ -14,8 +12,6 @@ export const getServerSideProps = async () => {
 const NewsArticleList = ({ articles }) => {
   return (
     <>
-      <Navbar />
-
       <h1>News Article List</h1>
 
       {articles.map((article) => {

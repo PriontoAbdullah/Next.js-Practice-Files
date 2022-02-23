@@ -1,4 +1,3 @@
-import NavBar from '../../components/Navbar';
 import { comments } from '../../data/comments';
 
 export const getStaticPaths = async () => {
@@ -33,8 +32,6 @@ export const getStaticProps = async (context) => {
 export const commentDetails = ({ comment }) => {
   return (
     <>
-      <NavBar />
-
       <h1>Comment Details</h1>
 
       <div key={comment.id}>

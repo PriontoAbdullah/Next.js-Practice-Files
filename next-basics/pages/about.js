@@ -1,10 +1,9 @@
-import NavBar from '../components/Navbar';
+import styles from '../styles/About.module.scss';
 
 export default function About() {
   return (
     <>
-      <NavBar />
-      <h1 className="hello">About Page</h1>
+      <h1 className={styles.hello}>About Page</h1>
     </>
   );
 }

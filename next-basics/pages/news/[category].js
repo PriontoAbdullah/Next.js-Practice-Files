@@ -1,5 +1,3 @@
-import NavBar from '../../components/navbar';
-
 export const getServerSideProps = async (context) => {
   const { params, req, res, query } = context;
   const { category } = params;
@@ -29,9 +27,7 @@ export const getServerSideProps = async (context) => {
 const NewsArticleCategory = ({ articles, category }) => {
   return (
     <>
-      <NavBar />
-      <h1> Showing News by Category: {category}</h1>
-
+      =<h1> Showing News by Category: {category}</h1>
       {articles.map((article) => {
         return (
           <div key={article.id}>

@@ -1,5 +1,3 @@
-import NavBar from '../../components/navbar';
-
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const { id } = params;
@@ -19,7 +17,6 @@ export const getServerSideProps = async (context) => {
 const EventDetails = ({ eventData }) => {
   return (
     <>
-      <NavBar />
       <h1> Showing Event Details: {eventData.id}</h1>
 
       <div key={eventData.id}>

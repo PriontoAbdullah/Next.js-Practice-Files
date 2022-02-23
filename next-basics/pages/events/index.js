@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import NavBar from '../../components/Navbar';
 
 export const getServerSideProps = async (context) => {
   const { category } = context.query;
@@ -35,7 +34,6 @@ export default function Events({ eventList }) {
 
   return (
     <>
-      <NavBar />
       <h2>List of Events</h2>
       <button onClick={fetchSportsEvents}>Events Filter - Sports</button>
       <ul>

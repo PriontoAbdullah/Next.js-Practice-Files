@@ -1,5 +1,4 @@
 import useSWR from 'swr';
-import NavBar from '../components/Navbar';
 
 const fetcher = async () => {
   const response = await fetch('http://localhost:4000/dashboard');
@@ -16,7 +15,6 @@ const dashboard = () => {
 
   return (
     <div>
-      <NavBar />
       <h2>Dashboard</h2>
       <h2>Posts - {data.posts}</h2>
       <h2>Likes - {data.likes}</h2>

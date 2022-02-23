@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import NavBar from '../../../components/Navbar';
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -7,7 +6,6 @@ const ProductDetails = () => {
 
   return (
     <>
-      <NavBar />
       <h1>Product Details of {productId}</h1>
     </>
   );

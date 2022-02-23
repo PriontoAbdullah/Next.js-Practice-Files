@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import NavBar from '../../components/Navbar';
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
@@ -40,7 +39,6 @@ const Comments = () => {
 
   return (
     <>
-      <NavBar />
       <h1>Write Comment</h1>
       <input
         type="text"

@@ -1,4 +1,3 @@
-import NavBar from '../components/Navbar';
 import User from '../components/Users/User';
 
 export const getStaticProps = async () => {
@@ -14,7 +13,6 @@ export const getStaticProps = async () => {
 const UserList = ({ usersData }) => {
   return (
     <>
-      <NavBar />
       <h1> List of Users </h1>
       <p>Static Site Generator</p>
       {usersData.map((user) => (
