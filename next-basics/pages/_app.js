@@ -1,13 +1,26 @@
-import Footer from '../components/Footer';
-import NavBar from '../components/Navbar';
-import '../styles/globals.css';
+import Footer from '@/Layout/Footer';
+import NavBar from '@/Layout/Navbar';
+import { SessionProvider } from 'next-auth/react';
+import Head from 'next/Head';
+import 'styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  }
+
   return (
     <>
-      <NavBar />
-      <Component {...pageProps} />
-      <Footer />
+      <Head>
+        <title>Home Page</title>
+        <meta name="description" content="Learning Next.js" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <SessionProvider session={session}>
+        <NavBar />
+        <Component {...pageProps} />
+        <Footer />
+      </SessionProvider>
     </>
   );
 }

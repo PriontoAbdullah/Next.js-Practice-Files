@@ -1,3 +1,5 @@
+import { getSession, signIn } from 'next-auth/react';
+import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 
 const fetcher = async () => {
@@ -8,10 +10,29 @@ const fetcher = async () => {
 };
 
 const dashboard = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const securePage = async () => {
+      const session = await getSession();
+      if (!session) {
+        signIn('');
+      } else {
+        setLoading(false);
+      }
+    };
+
+    securePage();
+  }, []);
+
   const { data, error } = useSWR('dashboard', fetcher);
 
-  if (error) return 'An error has occurred';
-  if (!data) return 'Loading...';
+  if (error) return <p>An error has occurred</p>;
+  if (!data) return <p>Loading...</p>;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div>

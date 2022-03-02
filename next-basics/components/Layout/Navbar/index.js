@@ -1,7 +1,10 @@
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import styles from './NavBar.module.css';
 
 const NavBar = () => {
+  const { data: session, status } = useSession();
+
   return (
     <>
       <ul className={styles.navLink}>
@@ -93,6 +96,40 @@ const NavBar = () => {
             <a>Comments</a>
           </Link>
         </li>
+
+        <p>NEXT AUTH GITHUB</p>
+        {status === 'unauthenticated' && !session && (
+          <li>
+            <Link href="/api/auth/signin">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn('github');
+                }}
+              >
+                Sign In
+              </a>
+            </Link>
+          </li>
+        )}
+
+        {status === 'authenticated' && session && (
+          <>
+            <p>Client Side Authentication</p>
+            <li>
+              <Link href="/api/auth/signout">
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signOut('github');
+                  }}
+                >
+                  Sign Out
+                </a>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
     </>
   );
