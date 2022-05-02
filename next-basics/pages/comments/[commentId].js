@@ -1,5 +1,3 @@
-import { comments } from '../../data/comments';
-
 export const getStaticPaths = async () => {
   return {
     paths: [
@@ -14,17 +12,19 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { commentId } = context.params;
 
-  const comment = comments.find(
-    (comment) => comment.id === parseInt(commentId)
-  );
+  // const comment = comments.find(
+  //   (comment) => comment.id === parseInt(commentId)
+  // );
 
   // DON'T DO THIS
-  // const response = await fetch(`api/comments/${commentId}`);
-  // const data = await response.json();
+  const response = await fetch(
+    `http://localhost:3001/api/comments/${commentId}`
+  );
+  const data = await response.json();
 
   return {
     props: {
-      comment,
+      comment: data,
     },
   };
 };
